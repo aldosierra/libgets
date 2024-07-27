@@ -2,8 +2,6 @@
 
 Libgets is a CS50-like C library with Nix flakes, designed for learning C and Nix flakes.
 
----
-
 ## Table of Contents.
 1. [How to use it in your devShell.](#how-to-use-it-in-your-devshell)
 2. [To do List.](#to-do-list)
