@@ -62,11 +62,12 @@ int GetInt(char *message) {
 long int GetLong(char *message) {
   long int number = 0, multiplier;
   char *buffer;
-  unsigned char notNumber = 0;
+  unsigned char notNumber;
 
   do {
     buffer = GetString(message);
     multiplier = 1;
+    notNumber = 0;
 
     for(int length = strlen(buffer) - 1; length >= 0; length--) {
       if (!isdigit(buffer[length])) {
