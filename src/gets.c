@@ -85,7 +85,7 @@ long int GetLong(char *message) {
         break;
       }
 
-      number += (buffer[length] * multiplier);
+      number += ((buffer[length] - '0') * multiplier);
       multiplier *= 10;
     }
   } while (notNumber);
