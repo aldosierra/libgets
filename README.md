@@ -54,7 +54,7 @@ devShells = {
 };
 ```
 
-This will work with both \#include <...> and \#include "..."
+This will work with both \#include <...> and \#include "...".
 ```c
 #include <libgets.h>
 
