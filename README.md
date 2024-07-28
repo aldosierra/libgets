@@ -42,6 +42,30 @@ int main(void) {
 }
 ```
 
+Optionally you can add libgets to C_INCLUDE_PATH to include it on the standard system
+include directories, here is an example.
+```nix
+devShells = {
+    default = pkgs.mkShell {
+        name = "sample-env";
+        buildInputs = with pkgs; [ gcc libgets.packages."x86_64-linux".default ];
+        C_INCLUDE_PATH = "${libgets.packages.${system}.default}/include:$C_INCLUDE_PATH";
+    };
+};
+```
+
+This will work with both \#include <...> and \#include "..."
+```c
+#include <libgets.h>
+
+int main(void) {
+    char *name = GetString("What is your name? ");
+    printf("Hi, %s\n", name);
+
+    return 0;
+}
+```
+
 ## To do List.
 
 - [ ] Add a list of functions include it on this library.
