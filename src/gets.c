@@ -1,6 +1,7 @@
 #include "gets.h"
 #include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #define BUFFER_SIZE 100000
@@ -22,7 +23,13 @@ char *GetString(char *message) {
     while ((extraBuffer = getchar()) != '\n' && extraBuffer != EOF);
   };
 
-  return buffer;
+  char *result = malloc(bufferLength + 1);
+  if (result == NULL) {
+    return NULL;
+  }
+  strcpy(result, buffer);
+
+  return result;
 };
 
 char *ToLowerCase(char *buffer) {
