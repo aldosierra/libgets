@@ -25,6 +25,30 @@ char *GetString(char *message) {
   return buffer;
 };
 
+char *ToLowerCase(char *buffer) {
+  size_t bufferLength = strlen(buffer);
+
+  for (int i = 0; i < bufferLength; i++) {
+    if (isalpha(buffer[i])) {
+      buffer[i] = tolower(buffer[i]);
+    };
+  };
+
+  return buffer;
+};
+
+char *ToUpperCase(char *buffer) {
+  size_t bufferLength = strlen(buffer);
+
+  for (int i = 0; i < bufferLength; i++) {
+    if (isalpha(buffer[i])) {
+      buffer[i] = toupper(buffer[i]);
+    };
+  };
+
+  return buffer;
+};
+
 int GetInt(char *message) {
   int number = 0, multiplier;
   char *buffer;
